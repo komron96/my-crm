@@ -34,7 +34,7 @@ void CreateClient()
     );
 }
 
-ClientOrders clientOrders = new();
+ClientOrder clientOrders = new();
 CreateOrder();
 void CreateOrder()
 {

@@ -19,26 +19,19 @@ public sealed class ClientService
     }
 }
 
-public sealed class ClientOrders
+public sealed class ClientOrder
 {
-    public Order Createorder(
-        string orderID,
-        string Description,
-        string Price,
-        short Date,
-        string Delivery,
-        string Adress
-    )
+    public Order CreateOrder(OrderInfo orderInfo)
     {
         // TODO: Validate input parameters.
         return new()
         {
-            orderID = orderID,
-            Description = Description,
-            Price = Price,
-            Date = Date,
-            Delivery = Delivery,
-            Adress = Adress
+            orderID = orderInfo.orderID,
+            Description = orderInfo.Description,
+            Price = orderInfo.Price,
+            Date = orderInfo.Date,
+            Delivery = orderInfo.Delivery,
+            Adress = orderInfo.Adress
         };
     }
 }
