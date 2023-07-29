@@ -26,7 +26,7 @@ public sealed class ClientOrder
         // TODO: Validate input parameters.
         return new()
         {
-            orderID = orderInfo.orderID,
+            ID = orderInfo.orderID,
             Description = orderInfo.Description,
             Price = orderInfo.Price,
             Date = orderInfo.Date,

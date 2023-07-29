@@ -34,20 +34,21 @@ void CreateClient()
     );
 }
 
-ClientOrder clientOrders = new();
+
+ClientOrder clientOrder = new();
 CreateOrder();
 void CreateOrder()
 {
-    string orderID = Console.ReadLine();
+    string ID = Console.ReadLine();
     string Description= Console.ReadLine();
     string Price = Console.ReadLine();
     short Date = short.Parse(Console.ReadLine());
     string Delivery = Console.ReadLine();
     string Adress = Console.ReadLine();
     
-    Order newOrder = clientOrders.Createorder
+    Order newOrder = clientOrder.Createorder
     (
-        orderID,
+        ID,
         Description,
         Price,
         Date,
