@@ -14,9 +14,30 @@ public sealed class ClientService
             MiddleName = clientInfo.MiddleName,
             Age = clientInfo.Age,
             PassportNumber = clientInfo.PassportNumber,
-            Gender = clientInfo.Gender
+            Gender = clientInfo.Gender,
+            Email = clientInfo.Email,
+            Phone = clientInfo.Phone,
+            Password = clientInfo.Password
+
         };
     }
+    
+    List<Client> clients = new List<Client>();
+    public void AddClient(ClientInfo clientInfo)
+    {
+         Client newClient = CreateClient(clientInfo);
+            clients.Add(newClient);   
+    }
+
+
+    // public void ListOfClients()
+    // {
+    //     foreach (string x in clients)
+    //     {
+    //         Console.WriteLine(x);
+    //     }
+
+    // }
 }
 
 public sealed class ClientOrder

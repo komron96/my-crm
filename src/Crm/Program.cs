@@ -1,5 +1,6 @@
 ﻿using Crm.Entities;
 using Crm.Services;
+using System.Collections.Generic;
 
 ClientService clientService = new();
 CreateClient();
@@ -11,6 +12,10 @@ void CreateClient()
     string ageInputStr = Console.ReadLine();
     string passportNumber = Console.ReadLine();
     string genderInputStr = Console.ReadLine();
+    string email = Console.ReadLine();
+    string phone = Console.ReadLine();
+    string password = Console.ReadLine();
+
 
     if(!ValidateClient(
         firstName,
@@ -18,54 +23,28 @@ void CreateClient()
         middleName,
         ageInputStr,
         passportNumber,
-        genderInputStr
+        genderInputStr,
+        email,
+        phone,
+        password
     )) return;
 
     Gender gender = (Gender)int.Parse(genderInputStr);
     short age = short.Parse(ageInputStr);
 
-    Client newClient = clientService.CreateClient(
-        firstName,
-        lastName,
-        middleName,
-        age,
-        passportNumber,
-        gender
-    );
-}
 
-
-ClientOrder clientOrder = new();
-CreateOrder();
-void CreateOrder()
-{
-    string ID = Console.ReadLine();
-    string Description= Console.ReadLine();
-    string Price = Console.ReadLine();
-    short Date = short.Parse(Console.ReadLine());
-    string Delivery = Console.ReadLine();
-    string Adress = Console.ReadLine();
-    
-    Order newOrder = clientOrder.Createorder
-    (
-        ID,
-        Description,
-        Price,
-        Date,
-        Delivery,
-        Adress
-    );
-}
-
-bool ValidateClient(
+bool ValidateClient( 
     string firstName,
     string lastName,
     string middleName,
     string ageStr,
     string passportNumber,
-    string genderStr)
-{
-    List<string> errors = new();
+    string genderStr,
+    string phone,
+    string email,
+    string password) 
+
+{  List<string> errors = new();
 
     if (firstName is { Length: 0 })
         errors.Add("First Name field is required!");
@@ -75,6 +54,15 @@ bool ValidateClient(
 
     if (middleName is { Length: 0 })
         errors.Add("Middle Name field is required!");
+    
+    if (phone is { Length: 0 })
+        errors.Add("Phone field is required!");
+
+    if (email is { Length: 0 })
+        errors.Add("Email adress field is required!");
+
+    if (password is { Length: 0 })
+        errors.Add("Password field is required nigga!");
 
     bool isAgeCorrect = short.TryParse(ageStr, out short age);
     if (!isAgeCorrect)
@@ -102,6 +90,47 @@ bool ValidateClient(
         Console.ForegroundColor = ConsoleColor.White;
         return false;
     }
-
     return true;
+}
+
+
+    Client newClient = clientService.CreateClient(
+            firstName,
+            lastName,
+            middleName,
+            age,
+            passportNumber,
+            gender,
+            email,
+            phone,
+            password
+    );
+}
+
+
+
+
+
+
+
+ClientOrder clientOrder = new();
+CreateOrder();
+void CreateOrder()
+{
+    string ID = Console.ReadLine();
+    string Description= Console.ReadLine();
+    string Price = Console.ReadLine();
+    short Date = short.Parse(Console.ReadLine());
+    string Delivery = Console.ReadLine();
+    string Adress = Console.ReadLine();
+    
+    Order newOrder = clientOrder.Createorder
+    (
+        ID,
+        Description,
+        Price,
+        Date,
+        Delivery,
+        Adress
+    );
 }
