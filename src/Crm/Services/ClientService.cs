@@ -1,11 +1,18 @@
 using Crm.Entities;
-
 namespace Crm.Services;
 
+public abstract class AbstractClientService
+{   
+    protected List<Client> ClientsList = new List<Client>();
+    public abstract Client CreateClient(ClientInfo clientInfo);
+    public abstract void AddClient(ClientInfo clientInfo);
+    public abstract void ClientSearch(string firstName, string lastName);
+}
 
-public sealed class ClientService
+
+public class ClientService : AbstractClientService
 {
-    public Client CreateClient(ClientInfo clientInfo)
+    public override Client CreateClient(ClientInfo clientInfo)
     {
         return new()
         {
@@ -22,27 +29,36 @@ public sealed class ClientService
         };
     }
     
-    List<Client> clients = new List<Client>();
-    public void AddClient(ClientInfo clientInfo)
+    List<Client> ClientsList = new List<Client>();
+    public override void AddClient(ClientInfo clientInfo)
     {
          Client newClient = CreateClient(clientInfo);
-            clients.Add(newClient);   
+            ClientsList.Add(newClient);   
     }
 
 
-    // public void ListOfClients()
-    // {
-    //     foreach (string x in clients)
-    //     {
-    //         Console.WriteLine(x);
-    //     }
-
-    // }
+    public override void ClientSearch(string firstName, string lastName)
+    {
+        ClientsList.Find(client => client.FirstName == firstName && client.LastName == lastName);
+    }
 }
 
-public sealed class ClientOrder
+
+
+
+
+//Создание абстракции ордера и на его основе создание класса ClientOrder
+public abstract class AbstractOrderService
+{   
+    protected List<Order> OrderList = new List<Order>();
+    public abstract Order CreateOrder(OrderInfo orderInfo);
+    public abstract void Addorder(OrderInfo orderInfo);
+    public abstract void OrderSearch(string ID);
+}
+
+public class ClientOrder : AbstractOrderService
 {
-    public Order CreateOrder(OrderInfo orderInfo)
+    public override Order CreateOrder(OrderInfo orderInfo)
     {
         // TODO: Validate input parameters.
         return new()
@@ -55,4 +71,18 @@ public sealed class ClientOrder
             Adress = orderInfo.Adress
         };
     }
+
+    //Создание списка ордеров и метод который добавляет в список новый ордер
+    List<Order> OrderList = new List<Order>();
+
+    public override void Addorder(OrderInfo clientInfo)
+    {
+         Order newOrder = CreateOrder(clientInfo);
+            OrderList.Add(newOrder);   
+    }
+
+    public Order OrderSearch(string ID)
+        {
+            return OrderList.Find(order => order.ID == ID);
+        }
 }

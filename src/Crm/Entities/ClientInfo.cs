@@ -1,5 +1,6 @@
 namespace Crm.Entities;
 
+
 public readonly struct ClientInfo
 {
     public readonly long Id {get; init;}
@@ -13,3 +14,4 @@ public readonly struct ClientInfo
     public readonly string PassportNumber{get; init;}
     public readonly Gender Gender{get; init;}
 }
+
