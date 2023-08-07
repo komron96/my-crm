@@ -1,4 +1,4 @@
-﻿using Crm.Entities;
+﻿namespace Data.Access;
 using Crm.Services;
 using System.Collections.Generic;
 
@@ -35,7 +35,7 @@ void CreateClient()
 
 bool ValidateClient( 
     string firstName,
-    string lastName,
+    string lastName, 
     string middleName,
     string ageStr,
     string passportNumber,

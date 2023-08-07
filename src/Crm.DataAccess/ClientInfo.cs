@@ -1,4 +1,4 @@
-namespace Crm.Entities;
+namespace Data.Access;
 
 
 public readonly struct ClientInfo

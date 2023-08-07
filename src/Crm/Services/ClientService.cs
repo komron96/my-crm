@@ -1,4 +1,4 @@
-using Crm.Entities;
+namespace Data.Access;
 namespace Crm.Services;
 
 public abstract class AbstractClientService
@@ -47,7 +47,7 @@ public class ClientService : AbstractClientService
 
 
 
-//Создание абстракции ордера и на его основе создание класса ClientOrder
+//Создание абстракции ордера и на его основе создание класса ClientOrderd
 public abstract class AbstractOrderService
 {   
     protected List<Order> OrderList = new List<Order>();
