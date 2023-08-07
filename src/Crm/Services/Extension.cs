@@ -1,4 +1,4 @@
-using Crm.Entities;
+namespace Data.Access;
 
 public static class IntegerExtensions
 {
