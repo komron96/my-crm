@@ -1,5 +1,4 @@
 ﻿namespace Data.Access;
-using Crm.Services;
 using System.Collections.Generic;
 
 ClientService clientService = new();
