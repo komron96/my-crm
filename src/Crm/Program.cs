@@ -1,9 +1,6 @@
-﻿namespace Data.Access;
-using BusinessLogic;
+﻿using Crm.BusinessLogic;
 
-using System.Collections.Generic;
-
-ClientService clientService = new();
+IClientService clientService = new ClientService();
 CreateClient();
 
 void CreateClient()
@@ -114,7 +111,7 @@ bool ValidateClient(
 
 
 //OrderCreation Part
-ClientOrder clientOrder = new();
+IOrderService clientOrder = new ClientOrder();
 CreateOrder();
 void CreateOrder()
 {
