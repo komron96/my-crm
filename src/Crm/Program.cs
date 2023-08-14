@@ -1,4 +1,6 @@
 ﻿namespace Data.Access;
+using BusinessLogic;
+
 using System.Collections.Generic;
 
 ClientService clientService = new();
