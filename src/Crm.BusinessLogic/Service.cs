@@ -1,4 +1,5 @@
-using Data.Access;
+using System.ComponentModel.DataAnnotations;
+using Crm.DataAccess;
 namespace Crm.BusinessLogic;
 
 public sealed class ClientService : IClientService
@@ -12,6 +13,7 @@ public sealed class ClientService : IClientService
 
     //Здесь создаём методом клиента CreateClient()
     public Client CreateClient(
+    long ClientID,
     string firstName, string lastName, string middleName,
     short age,
     string passportnumber, 
@@ -22,6 +24,7 @@ public sealed class ClientService : IClientService
     {
         Client newClient = new()
     {
+        ClientID = ClientID,
         FirstName = firstName,
         LastName = lastName,
         MiddleName = middleName,
@@ -38,17 +41,20 @@ public sealed class ClientService : IClientService
     }
 
 
-    public void AddClient(ClientInfo clientInfo)
-    {
-         Client newClient = CreateClient(clientInfo);
-            _clientsList.Add(newClient);   
-    }
+    // public void AddClient(ClientInfo clientInfo)
+    // {
+    //      Client newClient = CreateClient(clientInfo);
+    //         _clientsList.Add(newClient);   
+    // }
 
         // Мой метод
     // public void GetClient(string firstName, string lastName)
     // {
     //     _clientsList.Find(client => client.FirstName == firstName && client.LastName == lastName);
     // }
+
+
+    //Method of Getting Client by Fname and Lname
     public Client GetClient(string firstName, string lastName)
     {
         if (firstName is not {Length: > 0})
@@ -63,6 +69,18 @@ public sealed class ClientService : IClientService
         }
         throw new Exception ("Client was not found");
     }
+
+    //Method of Deleting Client
+        public Client DeleteClient(string clientid)
+    {
+        foreach(Client client in _clientsList)
+        {
+            if (client.ClientID.Equals(clientid))
+                _clientsList.Remove(clientid);
+        }
+        throw new Exception ("Client was not found");
+    }
+
 }
 
 
@@ -81,7 +99,7 @@ public class ClientOrder : IOrderService
     }
 
     public Order CreateOrder(
-    string id,
+    string OrderID,
     string descpition,
     string price,
     short date,
@@ -90,7 +108,7 @@ public class ClientOrder : IOrderService
     {
         Order newOrder = new()
     {
-        ID = id,
+        OrderID = OrderID,
         Description = descpition,
         Price = price,
         Date = date,
@@ -102,16 +120,26 @@ public class ClientOrder : IOrderService
     }
 
 
-    public Client GetOrder(string id)
+    public Order GetOrder(string ID)
     {
-        if (id is not {Length: > 0})
-            throw new ArgumentNullException(nameof(id));
-
-        foreach(Order order in _ordersList)
+        if(ID is not {Length: > 0})
+        throw new ArgumentException(nameof(ID));
+        foreach (Order order in _ordersList)
         {
-            if (order.ID.Equals(id) )
+            if(order.OrderID.Equals(ID))
                 return order;
         }
         throw new Exception ("Order was not found");
+    }
+
+    public Order DeleteOrder(string orderid)
+    {
+        foreach(Order order in _ordersList)
+        {
+            if (order.OrderID.Equals(orderid))
+                _ordersList.Remove(orderid);
+        }
+        throw new Exception ("Client was not found");
+
     }
 }

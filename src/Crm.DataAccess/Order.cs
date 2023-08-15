@@ -1,10 +1,10 @@
-namespace Data.Access;
+namespace Crm.DataAccess;
 
 public sealed class Order
 {
     private readonly string? _price;
     private readonly string? _id;
-    public string ID    
+    public string OrderID    
     {
     get => _id ?? string.Empty;
     init => _id = value is { Length: > 0 } ? value : throw new ArgumentOutOfRangeException(nameof(value));

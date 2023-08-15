@@ -1,4 +1,6 @@
-﻿using Crm.BusinessLogic;
+﻿using Crm.DataAccess;
+using Crm.BusinessLogic;
+
 
 IClientService clientService = new ClientService();
 CreateClient();
@@ -13,7 +15,6 @@ void CreateClient()
     string email = Console.ReadLine();
     string phone = Console.ReadLine();
     string password = Console.ReadLine();
-
 
     if(!ValidateClient(
         firstName,
@@ -98,10 +99,10 @@ bool ValidateClient(
             middleName,
             age,
             passportNumber,
-            gender,
+            password,
             email,
             phone,
-            password
+            gender
     );
 }
 
@@ -122,7 +123,7 @@ void CreateOrder()
     string Delivery = Console.ReadLine();
     string Adress = Console.ReadLine();
     
-    Order newOrder = clientOrder.Createorder
+    Order newOrder = clientOrder.CreateOrder
     (
         ID,
         Description,

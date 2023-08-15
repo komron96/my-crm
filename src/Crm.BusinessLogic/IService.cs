@@ -1,9 +1,10 @@
-using Data.Access;
+using Crm.DataAccess;
 namespace Crm.BusinessLogic;
 
 public interface IClientService
 {   
     public Client CreateClient(
+    long ClientID,
     string firstName, string lastName, string middleName,
     short age,
     string passportnumber, 
@@ -12,13 +13,14 @@ public interface IClientService
     string password,
     Gender gender);
     public Client? GetClient(string firstName, string lastName);
+    public Client? DeleteClient(string clientid);
 }
 
 
 public interface IOrderService
 {   
     public Order CreateOrder(
-    string ID,
+    string OrderID,
     string Description,
     string Price,
     short Data,
@@ -26,4 +28,6 @@ public interface IOrderService
     string Adress
 );
     public Order? GetOrder(string ID);
+    public Order? DeleteOrder(string orderid);
+    
 }

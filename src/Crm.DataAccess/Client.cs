@@ -1,4 +1,4 @@
-namespace Data.Access;
+namespace Crm.DataAccess;
 
 public sealed class Client
 {
@@ -10,7 +10,7 @@ public sealed class Client
 
 
 
-    public long Id { get; set; }
+    public long ClientID { get; set; }
     
     public required string FirstName
     {

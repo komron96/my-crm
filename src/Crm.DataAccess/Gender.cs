@@ -1,4 +1,4 @@
-namespace Data.Access;
+namespace Crm.DataAccess;
 
 public enum Gender
 {
