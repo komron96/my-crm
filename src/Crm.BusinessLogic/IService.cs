@@ -14,6 +14,8 @@ public interface IClientService
     Gender gender);
     public Client? GetClient(string firstName, string lastName);
     public bool DeleteClient(long clientid);
+    public bool CountClient(int count);
+
 }
 
 
@@ -25,9 +27,13 @@ public interface IOrderService
     string Price,
     short Data,
     string Delivery,
-    string Adress
+    string Adress,
+    OrderState orderState
 );
     public Order? GetOrder(string ID);
     public bool DeleteOrder(long orderid);
+    public bool CountOrder(int count);
+    public bool CountOrderStatus(int CountApproved,int CountPending,int CountCancelled);
+    // public bool ChangeOrderStatus(Order newOrderStatus);
     
 }

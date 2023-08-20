@@ -2,7 +2,7 @@ namespace Crm.DataAccess;
 
 public static class IntegerExtensions
 {
-    public static bool TryParse(this int genderIndex, out Gender gender)
+    public static bool TryParseGender(this int genderIndex, out Gender gender)
     {
         switch(genderIndex)
         {
@@ -14,6 +14,24 @@ public static class IntegerExtensions
                 return true;
             default:
                 gender = default;
+                return false;
+        }
+    }
+        public static bool TryParseorderState(this int stateIndex, out OrderState orderState)
+    {
+        switch(stateIndex)
+        {
+            case 0:
+                orderState = OrderState.Pending;
+                return true;
+            case 1:
+                orderState = OrderState.Approved;
+                return true;
+            case 3:
+                orderState = OrderState.Canceled;
+                return true;
+            default:
+                orderState = default;
                 return false;
         }
     }

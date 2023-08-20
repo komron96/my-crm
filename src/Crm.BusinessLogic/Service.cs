@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using Crm.DataAccess;
 namespace Crm.BusinessLogic;
@@ -69,6 +70,15 @@ public sealed class ClientService : IClientService
         }   
         return false;
     }
+    
+    public bool CountClient(int count = 0)
+    {   
+        foreach(Client item in _clientsList)
+        {
+            count++; 
+        }
+        return true;
+    }
 
 }
 
@@ -81,6 +91,7 @@ public class ClientOrder : IOrderService
 {  
     //Создание списка ордеров и метод который добавляет в список новый ордер
     private readonly List<Order> _ordersList;
+    private readonly List<Order> _orderStateList;
     public ClientOrder() 
     {
         _ordersList = new();
@@ -92,7 +103,8 @@ public class ClientOrder : IOrderService
     string price,
     short date,
     string delivery,
-    string adress)
+    string adress,
+    OrderState orderState)
     {
         Order newOrder = new()
     {
@@ -101,7 +113,9 @@ public class ClientOrder : IOrderService
         Price = price,
         Date = date,
         Delivery = delivery,
-        Adress = adress
+        Adress = adress,
+        OrderState = orderState
+        
     };
         _ordersList.Add(newOrder);
          return newOrder;
@@ -111,7 +125,8 @@ public class ClientOrder : IOrderService
     public Order GetOrder(string ID)
     {
         if(ID is not {Length: > 0})
-        throw new ArgumentException(nameof(ID));
+            throw new ArgumentException(nameof(ID));
+
         foreach (Order order in _ordersList)
         {
             if(order.OrderID.Equals(ID))
@@ -120,7 +135,7 @@ public class ClientOrder : IOrderService
         throw new Exception ("Order was not found");
     }
 
-    //Method of Deleting Client
+    //Method of Deleting Order
         public bool DeleteOrder(long orderid)
     {
         foreach(Order item in _ordersList)
@@ -133,4 +148,41 @@ public class ClientOrder : IOrderService
         }   
         return false;
     }
+
+        public bool CountOrder(int count = 0)
+    {   
+        foreach(Order item in _ordersList)
+        {
+            count++; 
+        }
+        return true;
+    }
+
+    //Counting OrderStates
+    public bool CountOrderStatus(int CountApproved,int CountPending,int CountCancelled)
+    {
+        foreach(Order item in _orderStateList)
+        {
+            if(item.OrderState.Equals(CountApproved))
+            {
+                CountApproved++;
+            }
+            else if(item.OrderState.Equals(CountPending))
+            {
+                CountPending++;
+            }
+            else if(item.OrderState.Equals(CountCancelled))
+            {
+                CountCancelled++;
+            }
+        }
+        return true;
+    }
+
+    // //Method for chaning Order Status - недописанный метод
+    // public bool ChangeOrderStatus(Order newState)
+    // {
+    //     OrderState OrderState = newState;
+    //     return true;
+    // }
 }

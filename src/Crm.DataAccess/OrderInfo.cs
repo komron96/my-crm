@@ -8,4 +8,5 @@ public readonly struct OrderInfo
     public readonly short Date { get; init; }
     public readonly string Delivery { get; init; }
     public readonly string Adress { get; init; }
+    public readonly string OrderState {get;init;}
 }
