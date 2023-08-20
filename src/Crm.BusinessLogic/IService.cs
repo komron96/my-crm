@@ -13,7 +13,7 @@ public interface IClientService
     string password,
     Gender gender);
     public Client? GetClient(string firstName, string lastName);
-    public Client? DeleteClient(string clientid);
+    public bool DeleteClient(long clientid);
 }
 
 
@@ -28,6 +28,6 @@ public interface IOrderService
     string Adress
 );
     public Order? GetOrder(string ID);
-    public Order? DeleteOrder(string orderid);
+    public bool DeleteOrder(long orderid);
     
 }

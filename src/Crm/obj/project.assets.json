@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     "net7.0": {
+      "Crm.BusinessLogic/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Crm.DataAccess": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Crm.BusinessLogic.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Crm.BusinessLogic.dll": {}
+        }
+      },
       "Crm.DataAccess/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -15,6 +28,11 @@
     }
   },
   "libraries": {
+    "Crm.BusinessLogic/1.0.0": {
+      "type": "project",
+      "path": "../Crm.BusinessLogic/Crm.BusinessLogic.csproj",
+      "msbuildProject": "../Crm.BusinessLogic/Crm.BusinessLogic.csproj"
+    },
     "Crm.DataAccess/1.0.0": {
       "type": "project",
       "path": "../Crm.DataAccess/Crm.DataAccess.csproj",
@@ -23,23 +41,24 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "Crm.BusinessLogic >= 1.0.0",
       "Crm.DataAccess >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\komron.saidaliev\\.nuget\\packages\\": {}
+    "C:\\Users\\Ком\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\komron.saidaliev\\Desktop\\my-crm\\src\\Crm\\Crm.csproj",
+      "projectUniqueName": "C:\\Users\\Ком\\Desktop\\my crm\\src\\Crm\\Crm.csproj",
       "projectName": "Crm",
-      "projectPath": "C:\\Users\\komron.saidaliev\\Desktop\\my-crm\\src\\Crm\\Crm.csproj",
-      "packagesPath": "C:\\Users\\komron.saidaliev\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\komron.saidaliev\\Desktop\\my-crm\\src\\Crm\\obj\\",
+      "projectPath": "C:\\Users\\Ком\\Desktop\\my crm\\src\\Crm\\Crm.csproj",
+      "packagesPath": "C:\\Users\\Ком\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Ком\\Desktop\\my crm\\src\\Crm\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\komron.saidaliev\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Ком\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -53,8 +72,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\komron.saidaliev\\Desktop\\my-crm\\src\\Crm.DataAccess\\Crm.DataAccess.csproj": {
-              "projectPath": "C:\\Users\\komron.saidaliev\\Desktop\\my-crm\\src\\Crm.DataAccess\\Crm.DataAccess.csproj"
+            "C:\\Users\\Ком\\Desktop\\my crm\\src\\Crm.BusinessLogic\\Crm.BusinessLogic.csproj": {
+              "projectPath": "C:\\Users\\Ком\\Desktop\\my crm\\src\\Crm.BusinessLogic\\Crm.BusinessLogic.csproj"
+            },
+            "C:\\Users\\Ком\\Desktop\\my crm\\src\\Crm.DataAccess\\Crm.DataAccess.csproj": {
+              "projectPath": "C:\\Users\\Ком\\Desktop\\my crm\\src\\Crm.DataAccess\\Crm.DataAccess.csproj"
             }
           }
         }

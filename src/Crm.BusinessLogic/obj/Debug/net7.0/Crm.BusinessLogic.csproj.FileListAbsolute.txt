@@ -10,3 +10,18 @@ C:\Users\komron.saidaliev\Desktop\my-crm\src\Crm.BusinessLogic\obj\Debug\net7.0\
 C:\Users\komron.saidaliev\Desktop\my-crm\src\Crm.BusinessLogic\obj\Debug\net7.0\refint\Crm.BusinessLogic.dll
 C:\Users\komron.saidaliev\Desktop\my-crm\src\Crm.BusinessLogic\obj\Debug\net7.0\Crm.BusinessLogic.pdb
 C:\Users\komron.saidaliev\Desktop\my-crm\src\Crm.BusinessLogic\obj\Debug\net7.0\ref\Crm.BusinessLogic.dll
+C:\Users\Ком\Desktop\my crm\src\Crm.BusinessLogic\bin\Debug\net7.0\Crm.BusinessLogic.deps.json
+C:\Users\Ком\Desktop\my crm\src\Crm.BusinessLogic\bin\Debug\net7.0\Crm.BusinessLogic.dll
+C:\Users\Ком\Desktop\my crm\src\Crm.BusinessLogic\bin\Debug\net7.0\Crm.BusinessLogic.pdb
+C:\Users\Ком\Desktop\my crm\src\Crm.BusinessLogic\bin\Debug\net7.0\Crm.DataAccess.dll
+C:\Users\Ком\Desktop\my crm\src\Crm.BusinessLogic\bin\Debug\net7.0\Crm.DataAccess.pdb
+C:\Users\Ком\Desktop\my crm\src\Crm.BusinessLogic\obj\Debug\net7.0\Crm.BusinessLogic.csproj.AssemblyReference.cache
+C:\Users\Ком\Desktop\my crm\src\Crm.BusinessLogic\obj\Debug\net7.0\Crm.BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ком\Desktop\my crm\src\Crm.BusinessLogic\obj\Debug\net7.0\Crm.BusinessLogic.AssemblyInfoInputs.cache
+C:\Users\Ком\Desktop\my crm\src\Crm.BusinessLogic\obj\Debug\net7.0\Crm.BusinessLogic.AssemblyInfo.cs
+C:\Users\Ком\Desktop\my crm\src\Crm.BusinessLogic\obj\Debug\net7.0\Crm.BusinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\Ком\Desktop\my crm\src\Crm.BusinessLogic\obj\Debug\net7.0\Crm.BusinessLogic.csproj.CopyComplete
+C:\Users\Ком\Desktop\my crm\src\Crm.BusinessLogic\obj\Debug\net7.0\Crm.BusinessLogic.dll
+C:\Users\Ком\Desktop\my crm\src\Crm.BusinessLogic\obj\Debug\net7.0\refint\Crm.BusinessLogic.dll
+C:\Users\Ком\Desktop\my crm\src\Crm.BusinessLogic\obj\Debug\net7.0\Crm.BusinessLogic.pdb
+C:\Users\Ком\Desktop\my crm\src\Crm.BusinessLogic\obj\Debug\net7.0\ref\Crm.BusinessLogic.dll

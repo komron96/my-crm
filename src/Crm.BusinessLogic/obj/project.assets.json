@@ -1,26 +1,45 @@
 {
   "version": 3,
   "targets": {
-    "net7.0": {}
+    "net7.0": {
+      "Crm.DataAccess/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Crm.DataAccess.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Crm.DataAccess.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Crm.DataAccess/1.0.0": {
+      "type": "project",
+      "path": "../Crm.DataAccess/Crm.DataAccess.csproj",
+      "msbuildProject": "../Crm.DataAccess/Crm.DataAccess.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net7.0": []
+    "net7.0": [
+      "Crm.DataAccess >= 1.0.0"
+    ]
   },
   "packageFolders": {
-    "C:\\Users\\komron.saidaliev\\.nuget\\packages\\": {}
+    "C:\\Users\\Ком\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\komron.saidaliev\\Desktop\\my-crm\\src\\Crm.BusinessLogic\\Crm.BusinessLogic.csproj",
+      "projectUniqueName": "C:\\Users\\Ком\\Desktop\\my crm\\src\\Crm.BusinessLogic\\Crm.BusinessLogic.csproj",
       "projectName": "Crm.BusinessLogic",
-      "projectPath": "C:\\Users\\komron.saidaliev\\Desktop\\my-crm\\src\\Crm.BusinessLogic\\Crm.BusinessLogic.csproj",
-      "packagesPath": "C:\\Users\\komron.saidaliev\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\komron.saidaliev\\Desktop\\my-crm\\src\\Crm.BusinessLogic\\obj\\",
+      "projectPath": "C:\\Users\\Ком\\Desktop\\my crm\\src\\Crm.BusinessLogic\\Crm.BusinessLogic.csproj",
+      "packagesPath": "C:\\Users\\Ком\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Ком\\Desktop\\my crm\\src\\Crm.BusinessLogic\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\komron.saidaliev\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Ком\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -33,7 +52,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Ком\\Desktop\\my crm\\src\\Crm.DataAccess\\Crm.DataAccess.csproj": {
+              "projectPath": "C:\\Users\\Ком\\Desktop\\my crm\\src\\Crm.DataAccess\\Crm.DataAccess.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

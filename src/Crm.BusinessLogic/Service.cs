@@ -40,20 +40,6 @@ public sealed class ClientService : IClientService
     return newClient;
     }
 
-
-    // public void AddClient(ClientInfo clientInfo)
-    // {
-    //      Client newClient = CreateClient(clientInfo);
-    //         _clientsList.Add(newClient);   
-    // }
-
-        // Мой метод
-    // public void GetClient(string firstName, string lastName)
-    // {
-    //     _clientsList.Find(client => client.FirstName == firstName && client.LastName == lastName);
-    // }
-
-
     //Method of Getting Client by Fname and Lname
     public Client GetClient(string firstName, string lastName)
     {
@@ -71,18 +57,20 @@ public sealed class ClientService : IClientService
     }
 
     //Method of Deleting Client
-        public Client DeleteClient(string clientid)
+        public bool DeleteClient(long clientid)
     {
-        foreach(Client client in _clientsList)
+        foreach(Client item in _clientsList)
         {
-            if (client.ClientID.Equals(clientid))
-                _clientsList.Remove(clientid);
-        }
-        throw new Exception ("Client was not found");
+            if (item.ClientID.Equals(clientid))
+                {
+                    _clientsList.Remove(item);
+                    return true;
+                }
+        }   
+        return false;
     }
 
 }
-
 
 
 
@@ -132,14 +120,17 @@ public class ClientOrder : IOrderService
         throw new Exception ("Order was not found");
     }
 
-    public Order DeleteOrder(string orderid)
+    //Method of Deleting Client
+        public bool DeleteOrder(long orderid)
     {
-        foreach(Order order in _ordersList)
+        foreach(Order item in _ordersList)
         {
-            if (order.OrderID.Equals(orderid))
-                _ordersList.Remove(orderid);
-        }
-        throw new Exception ("Client was not found");
-
+            if (item.OrderID.Equals(orderid))
+                {
+                    _ordersList.Remove(item);
+                    return true;
+                }
+        }   
+        return false;
     }
 }
