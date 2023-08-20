@@ -118,6 +118,7 @@ public class ClientOrder : IOrderService
         
     };
         _ordersList.Add(newOrder);
+        _orderStateList.Add(newOrder);;
          return newOrder;
     }
 
@@ -161,20 +162,23 @@ public class ClientOrder : IOrderService
     //Counting OrderStates
     public bool CountOrderStatus(int CountApproved,int CountPending,int CountCancelled)
     {
+            CountApproved = 0;
+            CountPending = 0;
+            CountCancelled = 0;
         foreach(Order item in _orderStateList)
         {
-            if(item.OrderState.Equals(CountApproved))
+            switch (item.OrderState)
             {
+            case OrderState.Approved:
                 CountApproved++;
-            }
-            else if(item.OrderState.Equals(CountPending))
-            {
+                break;
+            case OrderState.Pending:
                 CountPending++;
-            }
-            else if(item.OrderState.Equals(CountCancelled))
-            {
+                break;
+            case OrderState.Cancelled:
                 CountCancelled++;
-            }
+                break;
+        }
         }
         return true;
     }

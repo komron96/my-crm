@@ -28,7 +28,7 @@ public static class IntegerExtensions
                 orderState = OrderState.Approved;
                 return true;
             case 3:
-                orderState = OrderState.Canceled;
+                orderState = OrderState.Cancelled;
                 return true;
             default:
                 orderState = default;
