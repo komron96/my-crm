@@ -1,4 +1,4 @@
-namespace Crm.DataAccess;
+namespace Crm.BusinessLogic;
 
 public readonly struct OrderInfo
 {

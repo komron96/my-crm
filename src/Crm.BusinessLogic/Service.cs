@@ -103,7 +103,7 @@ public class ClientOrder : IOrderService
     string price,
     short date,
     string delivery,
-    string adress,
+    string address,
     OrderState orderState)
     {
         Order newOrder = new()
@@ -113,7 +113,7 @@ public class ClientOrder : IOrderService
         Price = price,
         Date = date,
         Delivery = delivery,
-        Adress = adress,
+        Address = address,
         OrderState = orderState
         
     };

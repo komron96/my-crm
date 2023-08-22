@@ -21,5 +21,5 @@ public sealed class Order
     public string Description { get; set; }
     public short Date { get; set; }
     public string Delivery { get; set; }
-    public string Adress { get; set; }
+    public string Address { get; set; }
 }
