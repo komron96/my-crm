@@ -10,7 +10,7 @@ public sealed class Client
 
 
 
-    public long ClientID { get; set; }
+    public long Id { get; set; }
     
     public required string FirstName
     {

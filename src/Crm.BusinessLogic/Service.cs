@@ -14,7 +14,7 @@ public sealed class ClientService : IClientService
 
     //Здесь создаём методом клиента CreateClient()
     public Client CreateClient(
-    long ClientID,
+    long Id,
     string firstName, string lastName, string middleName,
     short age,
     string passportnumber, 
@@ -25,7 +25,7 @@ public sealed class ClientService : IClientService
     {
         Client newClient = new()
     {
-        ClientID = ClientID,
+        Id = Id,
         FirstName = firstName,
         LastName = lastName,
         MiddleName = middleName,
@@ -62,7 +62,7 @@ public sealed class ClientService : IClientService
     {
         foreach(Client item in _clientsList)
         {
-            if (item.ClientID.Equals(clientid))
+            if (item.Id.Equals(clientid))
                 {
                     _clientsList.Remove(item);
                     return true;
@@ -71,13 +71,14 @@ public sealed class ClientService : IClientService
         return false;
     }
     
-    public bool CountClient(int count = 0)
+    public int CountClient()
     {   
+        int count = 0;
         foreach(Client item in _clientsList)
         {
             count++; 
         }
-        return true;
+        return count;
     }
 
 }
@@ -98,7 +99,7 @@ public class ClientOrder : IOrderService
     }
 
     public Order CreateOrder(
-    string OrderID,
+    string Id,
     string descpition,
     string price,
     short date,
@@ -108,7 +109,7 @@ public class ClientOrder : IOrderService
     {
         Order newOrder = new()
     {
-        OrderID = OrderID,
+        Id = Id,
         Description = descpition,
         Price = price,
         Date = date,
@@ -123,14 +124,14 @@ public class ClientOrder : IOrderService
     }
 
 
-    public Order GetOrder(string ID)
+    public Order GetOrder(string OrderId)
     {
-        if(ID is not {Length: > 0})
-            throw new ArgumentException(nameof(ID));
+        if(OrderId is not {Length: > 0})
+            throw new ArgumentException(nameof(OrderId));
 
         foreach (Order order in _ordersList)
         {
-            if(order.OrderID.Equals(ID))
+            if(order.Id.Equals(OrderId))
                 return order;
         }
         throw new Exception ("Order was not found");
@@ -141,7 +142,7 @@ public class ClientOrder : IOrderService
     {
         foreach(Order item in _ordersList)
         {
-            if (item.OrderID.Equals(orderid))
+            if (item.Id.Equals(orderid))
                 {
                     _ordersList.Remove(item);
                     return true;
@@ -150,13 +151,14 @@ public class ClientOrder : IOrderService
         return false;
     }
 
-        public bool CountOrder(int count = 0)
+        public int CountOrder()
     {   
+        int count = 0;
         foreach(Order item in _ordersList)
         {
             count++; 
         }
-        return true;
+        return count;
     }
 
     //Counting OrderStates
@@ -183,10 +185,18 @@ public class ClientOrder : IOrderService
         return true;
     }
 
-    // //Method for chaning Order Status - недописанный метод
-    // public bool ChangeOrderStatus(Order newState)
-    // {
-    //     OrderState OrderState = newState;
-    //     return true;
-    // }
+    //Method for chaning Order Status - недописанный метод
+    public bool ChangeOrderStatus(OrderState newOrderStatus, long Id)
+    {   
+        foreach(Order Order1 in _ordersList)
+        {  
+            if(Order1.Id.Equals(Id))
+            {
+                Order1.OrderState = newOrderStatus;
+            }
+            return true;
+        }
+
+        return false;
+    }
 }

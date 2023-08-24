@@ -4,7 +4,7 @@ namespace Crm.BusinessLogic;
 
 public readonly struct ClientInfo
 {
-    public readonly long ClientID {get; init;}
+    public readonly long Id {get; init;}
     public readonly string FirstName {get;init;}
     public readonly string LastName{get; init;}
     public readonly string MiddleName{get; init;}

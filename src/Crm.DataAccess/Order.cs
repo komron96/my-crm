@@ -4,7 +4,7 @@ public sealed class Order
 {
     private readonly string? _price;
     private readonly string? _id;
-    public string OrderID    
+    public string Id    
     {
     get => _id ?? string.Empty;
     init => _id = value is { Length: > 0 } ? value : throw new ArgumentOutOfRangeException(nameof(value));

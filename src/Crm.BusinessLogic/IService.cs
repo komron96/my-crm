@@ -4,7 +4,7 @@ namespace Crm.BusinessLogic;
 public interface IClientService
 {   
     public Client CreateClient(
-    long ClientID,
+    long id,
     string firstName, string lastName, string middleName,
     short age,
     string passportnumber, 
@@ -14,7 +14,7 @@ public interface IClientService
     Gender gender);
     public Client? GetClient(string firstName, string lastName);
     public bool DeleteClient(long clientid);
-    public bool CountClient(int count);
+    public int CountClient();
 
 }
 
@@ -32,8 +32,8 @@ public interface IOrderService
 );
     public Order? GetOrder(string ID);
     public bool DeleteOrder(long orderid);
-    public bool CountOrder(int count);
+    public int CountOrder();
     public bool CountOrderStatus(int CountApproved,int CountPending,int CountCancelled);
-    // public bool ChangeOrderStatus(Order newOrderStatus);
+    public bool ChangeOrderStatus(OrderState newOrderStatus, long Id);
     
 }
