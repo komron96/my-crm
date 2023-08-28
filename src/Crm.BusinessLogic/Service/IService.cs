@@ -11,10 +11,7 @@ public interface IClientService
 
 public interface IOrderService
 {   
-    public Order CreateOrder();
-    public Order? GetOrder(string ID);
+    public OrderInfo CreateOrder(OrderInfo orderInfo);
+    public OrderInfo GetOrder(string ID);
     public bool DeleteOrder(long orderid);
-    public bool CountOrderStatus(int CountApproved,int CountPending,int CountCancelled);
-    public bool ChangeOrderStatus(OrderState newOrderStatus, long Id);
-    
 }

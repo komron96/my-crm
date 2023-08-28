@@ -1,6 +1,4 @@
 namespace Crm.BusinessLogic;
-
-
 public readonly record struct ClientInfo(
     long Id,
     string FirstName,
@@ -12,5 +10,3 @@ public readonly record struct ClientInfo(
     string PassportNumber,
     short Age,
     string Gender);
-
-
