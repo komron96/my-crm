@@ -1,44 +1,37 @@
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
 using Crm.DataAccess;
 namespace Crm.BusinessLogic;
+
 
 public sealed class ClientService : IClientService
 {
         //Инициализация объектов класса должна происходить в конструкторе, а удаление в деструкторах.
     private readonly List<Client> _clientsList;
+    private long _id = 0;
     public ClientService() 
     {
         _clientsList = new();
     }
+    
 
     //Здесь создаём методом клиента CreateClient()
-    public Client CreateClient(
-    long Id,
-    string firstName, string lastName, string middleName,
-    short age,
-    string passportnumber, 
-    string email,
-    string phone,
-    string password,
-    Gender gender)
+    public ClientInfo CreateClient(ClientInfo clientInfo)
     {
         Client newClient = new()
-    {
-        Id = Id,
-        FirstName = firstName,
-        LastName = lastName,
-        MiddleName = middleName,
-        Age = age,
-        PassportNumber = passportnumber,
-        Email = email,
-        Phone = phone,
-        Password = password,
-        Gender = gender
-    };
+        
+            {
+                Id = _id++,
+                FirstName = clientInfo.FirstName,
+                LastName = clientInfo.LastName,
+                MiddleName = clientInfo.MiddleName,
+                Age = clientInfo.Age,
+                PassportNumber = clientInfo.PassportNumber,
+                Email = clientInfo.Email,
+                Phone = clientInfo.Phone,
+                Password = clientInfo.Password,
+                Gender = clientInfo.Gender.TogenderEnum(),
+            };
 
-    _clientsList.Add(newClient);
-    return newClient;
+    return clientInfo with {Id = newClient.Id};
     }
 
     //Method of Getting Client by Fname and Lname
@@ -49,40 +42,26 @@ public sealed class ClientService : IClientService
         if (lastName is not {Length: > 0})
             throw new ArgumentNullException(nameof(lastName));
 
-        foreach(Client client in _clientsList)
+        Client? client = _clientsList.Find(item => item.FirstName.Equals(firstName) && item.LastName.Equals(lastName));
+        if(client is null)
         {
-            if (client.FirstName.Equals(firstName) && client.LastName.Equals(lastName))
-                return client;
+            throw new NotFoundClietn
         }
-        throw new Exception ("Client was not found");
     }
 
-    //Method of Deleting Client
+    //Method of Deleting Client by id
         public bool DeleteClient(long clientid)
     {
-        foreach(Client item in _clientsList)
-        {
-            if (item.Id.Equals(clientid))
-                {
-                    _clientsList.Remove(item);
-                    return true;
-                }
-        }   
-        return false;
-    }
-    
-    public int CountClient()
-    {   
-        int count = 0;
-        foreach(Client item in _clientsList)
-        {
-            count++; 
-        }
-        return count;
+        int clientIndex = _clientsList.FindIndex(item => item.FirstName.Equals(clientid)); //item - переменная перебора цикла
+        if (clientIndex < 0)
+            return false;
+
+        _clientsList.RemoveAt(clientIndex);
+        
+        return true;
     }
 
 }
-
 
 
 
@@ -185,7 +164,7 @@ public class ClientOrder : IOrderService
         return true;
     }
 
-    //Method for chaning Order Status - недописанный метод
+    //Method for changing Order Status - недописанный метод
     public bool ChangeOrderStatus(OrderState newOrderStatus, long Id)
     {   
         foreach(Order Order1 in _ordersList)
