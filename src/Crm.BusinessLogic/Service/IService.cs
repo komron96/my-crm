@@ -13,5 +13,6 @@ public interface IOrderService
 {   
     public OrderInfo CreateOrder(OrderInfo orderInfo);
     public OrderInfo GetOrder(string ID);
-    public bool DeleteOrder(long orderid);
+    public bool DeleteOrder(long orderId);
+    public bool UpdateOrderState(long orderId, OrderState newOrderState);
 }

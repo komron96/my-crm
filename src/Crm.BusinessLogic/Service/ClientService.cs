@@ -5,8 +5,6 @@ namespace Crm.BusinessLogic;
 public sealed class ClientService : IClientService
 {
         //Инициализация объектов класса должна происходить в конструкторе, а удаление в деструкторах.
-    private readonly List<Client> _clientsList;
-    private long _id = 0;
     public ClientService() 
     {
         _clientsList = new();

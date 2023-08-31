@@ -2,13 +2,12 @@ using Crm.DataAccess;
 namespace Crm.BusinessLogic;
 public sealed class OrderService : IOrderService
 {  
-    //Создание списка ордеров и метод который добавляет в список новый ордер
-    private readonly List<Order> _ordersList;
-    private long _id = 0;
-    public OrderService() 
+    public readonly OrderRepository _orderRepository;
+    public OrderService(IOrderRepository orderRepository)
     {
-        _ordersList = new();
+        _orderRepository = orderRepository;
     }
+
     public OrderInfo CreateOrder(OrderInfo orderinfo)
     {
         Order newOrder = new()
@@ -27,6 +26,8 @@ public sealed class OrderService : IOrderService
     }
 
 
+
+
     public OrderInfo GetOrder(string OrderId)
     {
         if(OrderId is not {Length: > 0})
@@ -43,6 +44,14 @@ public sealed class OrderService : IOrderService
             return false;
 
         _ordersList.RemoveAt(clientIndex);
+        return true;
+    }
+
+    public bool UpdateOrderState(long orderId, OrderState newOrderState)
+    {
+        Order? order = _ordersList.Find(item => item.Id.Equals(orderId));
+        if (order is null) return false;
+        order.OrderState = newOrderState;
         return true;
     }
 }
