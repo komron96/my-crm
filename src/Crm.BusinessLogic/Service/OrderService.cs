@@ -2,11 +2,13 @@ using Crm.DataAccess;
 namespace Crm.BusinessLogic;
 public sealed class OrderService : IOrderService
 {  
-    public readonly OrderRepository _orderRepository;
+    public readonly IOrderRepository _orderRepository;
     public OrderService(IOrderRepository orderRepository)
     {
         _orderRepository = orderRepository;
     }
+
+
 
     public OrderInfo CreateOrder(OrderInfo orderinfo)
     {
@@ -25,9 +27,6 @@ public sealed class OrderService : IOrderService
         return orderinfo with { Id = newOrder.Id};
     }
 
-
-
-
     public OrderInfo GetOrder(string OrderId)
     {
         if(OrderId is not {Length: > 0})
@@ -37,21 +36,14 @@ public sealed class OrderService : IOrderService
             return order.ToOrderInfo();
     }
 
-    public bool DeleteOrder(long orderid)
-    {
-        int clientIndex = _ordersList.FindIndex(item => item.Id.Equals(orderid));
-        if (clientIndex < 0)
-            return false;
 
-        _ordersList.RemoveAt(clientIndex);
-        return true;
+    public bool DeleteOrder(long orderId)
+    {
+        return _orderRepository.DeleteOrder(orderId);
     }
 
     public bool UpdateOrderState(long orderId, OrderState newOrderState)
     {
-        Order? order = _ordersList.Find(item => item.Id.Equals(orderId));
-        if (order is null) return false;
-        order.OrderState = newOrderState;
-        return true;
+        return _orderRepository.UpdateOrderState(orderId, newOrderState);
     }
 }

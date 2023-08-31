@@ -7,3 +7,8 @@ public interface IStatisticsService
     public int GetOrderCount();
     public int GetOrderStateCount();
 }
+
+public sealed class StatisticsService : IStatisticsService
+{
+
+}
