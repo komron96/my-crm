@@ -13,3 +13,19 @@
 /Users/faridunwa/Documents/crm-practice/src/Crm/obj/Debug/net7.0/Crm.pdb
 /Users/faridunwa/Documents/crm-practice/src/Crm/obj/Debug/net7.0/Crm.genruntimeconfig.cache
 /Users/faridunwa/Documents/crm-practice/src/Crm/obj/Debug/net7.0/ref/Crm.dll
+C:\Users\komron.saidaliev\Desktop\my-crm\src\Crm\obj\Debug\net7.0\Crm.csproj.AssemblyReference.cache
+C:\Users\komron.saidaliev\Desktop\my-crm\src\Crm\obj\Debug\net7.0\Crm.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\komron.saidaliev\Desktop\my-crm\src\Crm\obj\Debug\net7.0\Crm.AssemblyInfoInputs.cache
+C:\Users\komron.saidaliev\Desktop\my-crm\src\Crm\obj\Debug\net7.0\Crm.AssemblyInfo.cs
+C:\Users\komron.saidaliev\Desktop\my-crm\src\Crm\obj\Debug\net7.0\Crm.csproj.CoreCompileInputs.cache
+C:\Users\komron.saidaliev\Desktop\my-crm\src\Crm\obj\Debug\net7.0\Crm.dll
+C:\Users\komron.saidaliev\Desktop\my-crm\src\Crm\obj\Debug\net7.0\refint\Crm.dll
+C:\Users\komron.saidaliev\Desktop\my-crm\src\Crm\obj\Debug\net7.0\Crm.pdb
+C:\Users\Ком\Desktop\my crm\src\Crm\obj\Debug\net7.0\Crm.csproj.AssemblyReference.cache
+C:\Users\Ком\Desktop\my crm\src\Crm\obj\Debug\net7.0\Crm.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ком\Desktop\my crm\src\Crm\obj\Debug\net7.0\Crm.AssemblyInfoInputs.cache
+C:\Users\Ком\Desktop\my crm\src\Crm\obj\Debug\net7.0\Crm.AssemblyInfo.cs
+C:\Users\Ком\Desktop\my crm\src\Crm\obj\Debug\net7.0\Crm.csproj.CoreCompileInputs.cache
+C:\Users\Ком\Desktop\my crm\src\Crm\obj\Debug\net7.0\Crm.dll
+C:\Users\Ком\Desktop\my crm\src\Crm\obj\Debug\net7.0\refint\Crm.dll
+C:\Users\Ком\Desktop\my crm\src\Crm\obj\Debug\net7.0\Crm.pdb

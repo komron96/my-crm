@@ -1,0 +1,91 @@
+{
+  "version": 3,
+  "targets": {
+    "net7.0": {
+      "Crm.DataAccess/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Crm.DataAccess.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Crm.DataAccess.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Crm.DataAccess/1.0.0": {
+      "type": "project",
+      "path": "../Crm.DataAccess/Crm.DataAccess.csproj",
+      "msbuildProject": "../Crm.DataAccess/Crm.DataAccess.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net7.0": [
+      "Crm.DataAccess >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Ком\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\Ком\\Desktop\\my crm\\src\\Crm.BusinessLogic\\Crm.BusinessLogic.csproj",
+      "projectName": "Crm.BusinessLogic",
+      "projectPath": "C:\\Users\\Ком\\Desktop\\my crm\\src\\Crm.BusinessLogic\\Crm.BusinessLogic.csproj",
+      "packagesPath": "C:\\Users\\Ком\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Ком\\Desktop\\my crm\\src\\Crm.BusinessLogic\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\Ком\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net7.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "projectReferences": {
+            "C:\\Users\\Ком\\Desktop\\my crm\\src\\Crm.DataAccess\\Crm.DataAccess.csproj": {
+              "projectPath": "C:\\Users\\Ком\\Desktop\\my crm\\src\\Crm.DataAccess\\Crm.DataAccess.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net7.0": {
+        "targetAlias": "net7.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

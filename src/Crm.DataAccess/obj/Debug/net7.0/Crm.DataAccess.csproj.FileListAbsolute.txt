@@ -1,0 +1,24 @@
+C:\Users\komron.saidaliev\Desktop\my-crm\src\Crm.DataAccess\bin\Debug\net7.0\Crm.DataAccess.deps.json
+C:\Users\komron.saidaliev\Desktop\my-crm\src\Crm.DataAccess\bin\Debug\net7.0\Crm.DataAccess.dll
+C:\Users\komron.saidaliev\Desktop\my-crm\src\Crm.DataAccess\bin\Debug\net7.0\Crm.DataAccess.pdb
+C:\Users\komron.saidaliev\Desktop\my-crm\src\Crm.DataAccess\obj\Debug\net7.0\Crm.DataAccess.csproj.AssemblyReference.cache
+C:\Users\komron.saidaliev\Desktop\my-crm\src\Crm.DataAccess\obj\Debug\net7.0\Crm.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\komron.saidaliev\Desktop\my-crm\src\Crm.DataAccess\obj\Debug\net7.0\Crm.DataAccess.AssemblyInfoInputs.cache
+C:\Users\komron.saidaliev\Desktop\my-crm\src\Crm.DataAccess\obj\Debug\net7.0\Crm.DataAccess.AssemblyInfo.cs
+C:\Users\komron.saidaliev\Desktop\my-crm\src\Crm.DataAccess\obj\Debug\net7.0\Crm.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\komron.saidaliev\Desktop\my-crm\src\Crm.DataAccess\obj\Debug\net7.0\Crm.DataAccess.dll
+C:\Users\komron.saidaliev\Desktop\my-crm\src\Crm.DataAccess\obj\Debug\net7.0\refint\Crm.DataAccess.dll
+C:\Users\komron.saidaliev\Desktop\my-crm\src\Crm.DataAccess\obj\Debug\net7.0\Crm.DataAccess.pdb
+C:\Users\komron.saidaliev\Desktop\my-crm\src\Crm.DataAccess\obj\Debug\net7.0\ref\Crm.DataAccess.dll
+C:\Users\Ком\Desktop\my crm\src\Crm.DataAccess\bin\Debug\net7.0\Crm.DataAccess.deps.json
+C:\Users\Ком\Desktop\my crm\src\Crm.DataAccess\bin\Debug\net7.0\Crm.DataAccess.dll
+C:\Users\Ком\Desktop\my crm\src\Crm.DataAccess\bin\Debug\net7.0\Crm.DataAccess.pdb
+C:\Users\Ком\Desktop\my crm\src\Crm.DataAccess\obj\Debug\net7.0\Crm.DataAccess.csproj.AssemblyReference.cache
+C:\Users\Ком\Desktop\my crm\src\Crm.DataAccess\obj\Debug\net7.0\Crm.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ком\Desktop\my crm\src\Crm.DataAccess\obj\Debug\net7.0\Crm.DataAccess.AssemblyInfoInputs.cache
+C:\Users\Ком\Desktop\my crm\src\Crm.DataAccess\obj\Debug\net7.0\Crm.DataAccess.AssemblyInfo.cs
+C:\Users\Ком\Desktop\my crm\src\Crm.DataAccess\obj\Debug\net7.0\Crm.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Ком\Desktop\my crm\src\Crm.DataAccess\obj\Debug\net7.0\Crm.DataAccess.dll
+C:\Users\Ком\Desktop\my crm\src\Crm.DataAccess\obj\Debug\net7.0\refint\Crm.DataAccess.dll
+C:\Users\Ком\Desktop\my crm\src\Crm.DataAccess\obj\Debug\net7.0\Crm.DataAccess.pdb
+C:\Users\Ком\Desktop\my crm\src\Crm.DataAccess\obj\Debug\net7.0\ref\Crm.DataAccess.dll

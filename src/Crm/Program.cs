@@ -1,8 +1,7 @@
-﻿namespace Data.Access;
-using Crm.Services;
-using System.Collections.Generic;
+﻿using Crm.DataAccess;
+using Crm.BusinessLogic;
 
-ClientService clientService = new();
+IClientService clientService = new ClientService();
 CreateClient();
 
 void CreateClient()
@@ -15,7 +14,6 @@ void CreateClient()
     string email = Console.ReadLine();
     string phone = Console.ReadLine();
     string password = Console.ReadLine();
-
 
     if(!ValidateClient(
         firstName,
@@ -92,18 +90,16 @@ bool ValidateClient(
     }
     return true;
 }
-
-
     Client newClient = clientService.CreateClient(
             firstName,
             lastName,
             middleName,
             age,
             passportNumber,
-            gender,
+            password,
             email,
             phone,
-            password
+            gender
     );
 }
 
@@ -113,24 +109,29 @@ bool ValidateClient(
 
 
 //OrderCreation Part
-ClientOrder clientOrder = new();
+IOrderService clientOrder = new ClientOrder();
 CreateOrder();
 void CreateOrder()
-{
+{   
     string ID = Console.ReadLine();
     string Description= Console.ReadLine();
     string Price = Console.ReadLine();
     short Date = short.Parse(Console.ReadLine());
     string Delivery = Console.ReadLine();
     string Adress = Console.ReadLine();
+    string orderStateInput = Console.ReadLine();
     
-    Order newOrder = clientOrder.Createorder
+    Order newOrder = clientOrder.CreateOrder
     (
         ID,
         Description,
         Price,
         Date,
         Delivery,
-        Adress
+        Adress,
+        orderStateInput
     );
+    
+    OrderState orderStateInput = (OrderState)int.Parse(orderStateInput);
+
 }
