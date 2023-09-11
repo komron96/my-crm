@@ -4,8 +4,6 @@ namespace Crm.BusinessLogic;
 public static class ClientInfoExtenstion
     {
         public static ClientInfo ToClientInfo(this Client client) 
-        //this обозначает что метод ссылается не на класс а на экземплярм класса
-        //Дополнительно во входный параметр в данном случае будет являться client -> client.ToClientInfo(cleint)
         {
             return new(
                 client.Id,

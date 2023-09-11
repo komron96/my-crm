@@ -1,3 +1,5 @@
+using System.Security.Cryptography.X509Certificates;
+
 namespace Crm.DataAccess;
 
 public class ClientRepository : IClientRepository
@@ -12,28 +14,27 @@ public class ClientRepository : IClientRepository
 
 
     //Main Methods
-    public bool Create(Client cleint)
+    public bool Create(Client client)
     {
         Client newClient = new()
         {
             Id = _id++,
-            FirstName = clientInfo.FirstName,
-            LastName = clientInfo.LastName,
-            MiddleName = clientInfo.MiddleName,
-            Age = clientInfo.Age,
-            PassportNumber = clientInfo.PassportNumber,
-            Email = clientInfo.Email,
-            Phone = clientInfo.Phone,
-            Password = clientInfo.Password,
-            Gender = clientInfo.Gender.TogenderEnum(),
+            FirstName = firstName,
+            LastName = lastName,
+            MiddleName = middleName,
+            Age = age,
+            PassportNumber = passportNumber,
+            Email = email,
+            Phone = phone,
+            Password = password,
+            Gender = gender
         };
-
-        return clientInfo with { Id = newClient.Id };
+      return true;
     }
 
     public bool GetClient(string firstName, string lastName)
     {
-        Client? client = _clients.Find(item => item.FirstName.Equals(firstName) && item.LastName.Equals(lastName))
+        Client? client = _clients.Find(item => item.FirstName.Equals(firstName) && item.LastName.Equals(lastName));
         return client.ToClientInfo();
     }
 

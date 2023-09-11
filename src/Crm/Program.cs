@@ -1,9 +1,10 @@
-﻿using Crm.DataAccess;
-using Crm.BusinessLogic;
+﻿using Crm.BusinessLogic;
 
 IClientService clientService = new ClientService();
-CreateClient();
+IOrderService orderService = OrderServiceFactory.CreateOrderService();
 
+
+CreateClient();
 void CreateClient()
 {   string firstName = Console.ReadLine();
     string lastName = Console.ReadLine();
