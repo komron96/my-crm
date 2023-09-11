@@ -4,62 +4,32 @@ namespace Crm.BusinessLogic;
 
 public sealed class ClientService : IClientService
 {
-        //Инициализация объектов класса должна происходить в конструкторе, а удаление в деструкторах.
-    public ClientService() 
+    public readonly IClientRepository _clientRepository;
+    //Question - почему мы обращаемся к репозиторию
+    public ClientService(IClientRepository clientRepository)
     {
-        _clientsList = new();
-    }
-    
-    public ClientInfo CreateClient(ClientInfo clientInfo)
-    {
-        Client newClient = new()
-        
-            {
-                Id = _id++,
-                FirstName = clientInfo.FirstName,
-                LastName = clientInfo.LastName,
-                MiddleName = clientInfo.MiddleName,
-                Age = clientInfo.Age,
-                PassportNumber = clientInfo.PassportNumber,
-                Email = clientInfo.Email,
-                Phone = clientInfo.Phone,
-                Password = clientInfo.Password,
-                Gender = clientInfo.Gender.TogenderEnum(),
-            };
-
-    return clientInfo with {Id = newClient.Id};
+        _clientRepository = clientRepository;
     }
 
-    public ClientInfo GetClient(string firstName, string lastName)
+
+
+    public bool Create(Client client)
     {
-        if (firstName is not {Length: > 0})
-            throw new ArgumentNullException(nameof(firstName));
-        if (lastName is not {Length: > 0})
-            throw new ArgumentNullException(nameof(lastName));
-
-        Client? client = _clientsList.Find(c => c.FirstName.Equals(firstName) && c.LastName.Equals(lastName)) ?? throw new NotFoundClient();
-        return client.ToClientInfo();
-
+        return _clientRepository.Create(client);
     }
 
-        public bool DeleteClient(long clientid)
-    {
-        int clientIndex = _clientsList.FindIndex(item => item.FirstName.Equals(clientid)); //item - переменная перебора цикла
-        if (clientIndex < 0)
-            return false;
+    public bool GetClient(string firstName, string lastName)
+    {  
+        return _clientRepository.GetClient(firstName, lastName);
+    }
 
-        _clientsList.RemoveAt(clientIndex);
-        
-        return true;
+    public bool DeleteClient(long clientid)
+    {
+        return _clientRepository.DeleteClient(clientid);
     }
 
     public bool EditClient(long Id, string NewFirstName, string NewLastName)
     {
-        Client? client = _clientsList.Find(item => item.Id.Equals(Id));
-        if (client is null) return false;
-
-        client.FirstName = NewFirstName;
-        client.LastName = NewLastName;
-        return true;
+        return _clientRepository.EditClient(Id, NewFirstName, NewLastName);
     }
 }

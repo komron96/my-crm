@@ -3,6 +3,7 @@ namespace Crm.BusinessLogic;
 public sealed class OrderService : IOrderService
 {  
     public readonly IOrderRepository _orderRepository;
+    //Question - почему мы обращаемся к репозиторию
     public OrderService(IOrderRepository orderRepository)
     {
         _orderRepository = orderRepository;
@@ -10,30 +11,14 @@ public sealed class OrderService : IOrderService
 
 
 
-    public OrderInfo CreateOrder(OrderInfo orderinfo)
+    public bool Create(Order order)
     {
-        Order newOrder = new()
-            {
-                Id = _id++,
-                Description = orderinfo.Description,
-                Price = orderinfo.Price,
-                Date = orderinfo.Date,
-                Delivery = orderinfo.Delivery,
-                Address = orderinfo.Address,
-                OrderState = orderinfo.OrderState.ToOrderStateEnum(),
-            };
-
-        _ordersList.Add(newOrder);
-        return orderinfo with { Id = newOrder.Id};
+        return _orderRepository.Create(order);
     }
 
-    public OrderInfo GetOrder(string OrderId)
+    public bool GetOrder(long orderId)
     {
-        if(OrderId is not {Length: > 0})
-            throw new ArgumentException(nameof(OrderId));
-
-        Order order = _ordersList.Find(item => item.Id.Equals(OrderId));
-            return order.ToOrderInfo();
+        return _orderRepository.GetOrder(orderId);
     }
 
 

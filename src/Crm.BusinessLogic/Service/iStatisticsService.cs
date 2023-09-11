@@ -1,14 +1,9 @@
 namespace Crm.BusinessLogic;
-
+using Crm.DataAccess;
 
 public interface IStatisticsService
 {
-    public int GetClientCount();
-    public int GetOrderCount();
-    public int GetOrderStateCount();
-}
-
-public sealed class StatisticsService : IStatisticsService
-{
-
+    int ClientCount();
+    int OrderCount();
+    int OrderStateCount(OrderState orderState);
 }

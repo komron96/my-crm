@@ -1,4 +1,4 @@
-using Crm.DataAccess;
+namespace Crm.DataAccess;
 
 public sealed class OrderRepository : IOrderRepository
 {
@@ -7,45 +7,52 @@ public sealed class OrderRepository : IOrderRepository
 
     public OrderRepository()
     {
-        _orders = new List<Order>();   
+        _orders = new List<Order>();
     }
 
 
-    //Методы
     public bool Create(Order order)
     {
-        throw new NotImplementedException();
+        Order newOrder = new()
+        {
+            Id = _id++,
+            Description = orderinfo.Description,
+            Price = orderinfo.Price,
+            Date = orderinfo.Date,
+            Delivery = orderinfo.Delivery,
+            Address = orderinfo.Address,
+            OrderState = orderinfo.OrderState.ToOrderStateEnum(),
+        };
+        _orders.Add(newOrder);
+        return orderinfo with { Id = newOrder.Id };
     }
 
-    public bool GetOrder(string OrderId)
+    public bool GetOrder(long orderId)
     {
-        if(OrderId is not {Length: > 0})
-            throw new ArgumentException(nameof(OrderId));
-
-        Order order = _orders.Find(item => item.Id.Equals(OrderId));
-            return order.ToOrderInfo();
+        Order order = _orders.Find(item => item.Id == orderId);
+        return order.ToOrderInfo();
     }
 
     public bool DeleteOrder(long orderId)
     {
-        int clientIndex = _orders.FindIndex(item => item.Id.Equals(orderId));
+        int clientIndex = _orders.FindIndex(item => item.Id == orderId);
         if (clientIndex < 0)
             return false;
         _orders.RemoveAt(clientIndex);
         return true;
     }
 
-     public int GetOrderCount() => _orders.Count;
-
-    public int GetOrderStateCount(OrderState orderState) => _orders.Count(o => o.OrderState == orderState);
-
-
-
     public bool UpdateOrderState(long orderId, OrderState newOrderState)
     {
-        Order? order = _orders.Find(item => item.Id.Equals(orderId));
+        Order? order = _orders.Find(item => item.Id == orderId);
         if (order is null) return false;
         order.OrderState = newOrderState;
         return true;
-    }  
+    }
+
+
+    //Counts
+    public int OrderCount() => _orders.Count;
+
+    public int OrderStateCount(OrderState orderState) => _orders.Count(item => item.OrderState == orderState);
 }

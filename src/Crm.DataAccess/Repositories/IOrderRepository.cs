@@ -1,14 +1,15 @@
 namespace Crm.DataAccess;
 public interface IOrderRepository
-
 {
+    //Main methods of Order
     bool Create(Order order);
-    bool GetOrder(string OrderId);
-    bool UpdateOrderState(long orderId, OrderState orderstate);
+    bool GetOrder(long OrderId);
     bool DeleteOrder(long orderId);
+    bool UpdateOrderState(long orderId, OrderState orderstate);
 
 
-    int GetOrderCount();
-    int GetOrderStateCount(OrderState orderState);
+    //Stat service
+    int OrderCount();
+    int OrderStateCount(OrderState orderState);
 }
 

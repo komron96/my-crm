@@ -2,17 +2,18 @@ using Crm.DataAccess;
 namespace Crm.BusinessLogic;
 
 public interface IClientService
-{   
-    public ClientInfo CreateClient(ClientInfo clientInfo);
-    public ClientInfo GetClient(string firstName, string lastName);
-    public bool DeleteClient(long clientid);
+{
+    bool Create(Client cleint);
+    bool GetClient(string firstName, string lastName);
+    bool DeleteClient(long clientid);
+    bool EditClient(long clientId, string NewFirstName, string NewLastName);
 }
 
 
 public interface IOrderService
-{   
-    public OrderInfo CreateOrder(OrderInfo orderInfo);
-    public OrderInfo GetOrder(string ID);
-    public bool DeleteOrder(long orderId);
-    public bool UpdateOrderState(long orderId, OrderState newOrderState);
+{
+    bool Create(Order order);
+    bool GetOrder(long orderId);
+    bool DeleteOrder(long orderId);
+    bool UpdateOrderState(long orderId, OrderState newOrderState);
 }
