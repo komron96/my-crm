@@ -1,5 +1,4 @@
-using Crm.DataAccess;
-namespace Crm.BusinessLogic;
+namespace Crm.DataAccess;
 
 public static class ClientInfoExtenstion
     {

@@ -1,4 +1,4 @@
-namespace Crm.BusinessLogic;
+namespace Crm.DataAccess;
 public readonly record struct OrderInfo(
     long Id,
     string OrderState,

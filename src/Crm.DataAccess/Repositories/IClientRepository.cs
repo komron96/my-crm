@@ -1,10 +1,9 @@
 namespace Crm.DataAccess;
 public interface IClientRepository
 {   
-    //Main methods of Client
     bool Create(Client client);
     bool GetClient(string firstName, string lastName);
-    bool DeleteClient(long ClientId);
+    bool DeleteClient(long clientId);
     bool EditClient(long Id, string NewFirstName, string NewLastName);
 
     //Stat service

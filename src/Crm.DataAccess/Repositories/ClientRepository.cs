@@ -1,5 +1,3 @@
-using System.Security.Cryptography.X509Certificates;
-
 namespace Crm.DataAccess;
 
 public class ClientRepository : IClientRepository
@@ -12,10 +10,18 @@ public class ClientRepository : IClientRepository
         _clients = new List<Client>();
     }
 
-
-    //Main Methods
     public bool Create(Client client)
     {
+        string firstName = client.FirstName;
+        string lastName = client.LastName;
+        string? middleName = client.MiddleName;
+        short age = client.Age;
+        string passportNumber = client.PassportNumber;
+        string? email = client.Email;
+        string phone = client.Phone;
+        string password = client.Password;
+        Gender gender = client.Gender;
+
         Client newClient = new()
         {
             Id = _id++,
@@ -29,16 +35,17 @@ public class ClientRepository : IClientRepository
             Password = password,
             Gender = gender
         };
-      return true;
+        _clients.Add(newClient);
+        return true;
     }
 
     public bool GetClient(string firstName, string lastName)
     {
         Client? client = _clients.Find(item => item.FirstName.Equals(firstName) && item.LastName.Equals(lastName));
-        return client.ToClientInfo();
+        return true;
     }
 
-    public bool DeleteClientnt(long clientId)
+    public bool DeleteClient(long clientId)
     {
         int clientIndex = _clients.FindIndex(item => item.FirstName.Equals(clientId));
         if (clientIndex < 0)
@@ -58,6 +65,5 @@ public class ClientRepository : IClientRepository
         return true;
     }
 
-    //Stat service
     public int ClientCount() => _clients.Count;
 }

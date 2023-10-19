@@ -12,7 +12,7 @@ public interface IClientService
 
 public interface IOrderService
 {
-    bool Create(Order order);
+    Task<bool> CreateAsync(Order order, CancellationToken cancellationToken);
     bool GetOrder(long orderId);
     bool DeleteOrder(long orderId);
     bool UpdateOrderState(long orderId, OrderState newOrderState);

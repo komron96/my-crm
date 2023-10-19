@@ -5,7 +5,8 @@ namespace Crm.BusinessLogic;
 public sealed class ClientService : IClientService
 {
     public readonly IClientRepository _clientRepository;
-    //Question - почему мы обращаемся к репозиторию
+
+    
     public ClientService(IClientRepository clientRepository)
     {
         _clientRepository = clientRepository;

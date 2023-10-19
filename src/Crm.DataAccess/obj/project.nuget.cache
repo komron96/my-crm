@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "HYNGR0pxy4HmkjG+/pQSnO88NB/YutEPnVkVHoQOy27bySEtJgQa1UU7OWfP4fW+gga7HGcHygayDkv6rkHeXw==",
+  "dgSpecHash": "eInFK+StDb1tRUWdCiZdoeWhEmRzLUFunC8k0BZo3r4uGZkL60WgH8HSSwevR3x3L963jCQxg1Vpnd/5LxMLrg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Ком\\Desktop\\my crm\\src\\Crm.DataAccess\\Crm.DataAccess.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\komron.saidaliev\\Desktop\\my-crm\\src\\Crm.DataAccess\\Crm.DataAccess.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\komron.saidaliev\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\komron.saidaliev\\.nuget\\packages\\npgsql\\7.0.6\\npgsql.7.0.6.nupkg.sha512"
+  ],
   "logs": []
 }

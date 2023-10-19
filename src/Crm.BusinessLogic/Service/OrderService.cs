@@ -11,9 +11,9 @@ public sealed class OrderService : IOrderService
 
 
 
-    public bool Create(Order order)
+    public Task<bool> CreateAsync(Order order, CancellationToken cancellationToken)
     {
-        return _orderRepository.Create(order);
+        return _orderRepository.CreateAsync(order, cancellationToken);
     }
 
     public bool GetOrder(long orderId)

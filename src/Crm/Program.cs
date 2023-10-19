@@ -103,36 +103,3 @@ bool ValidateClient(
             gender
     );
 }
-
-
-
-
-
-
-//OrderCreation Part
-IOrderService clientOrder = new ClientOrder();
-CreateOrder();
-void CreateOrder()
-{   
-    string ID = Console.ReadLine();
-    string Description= Console.ReadLine();
-    string Price = Console.ReadLine();
-    short Date = short.Parse(Console.ReadLine());
-    string Delivery = Console.ReadLine();
-    string Adress = Console.ReadLine();
-    string orderStateInput = Console.ReadLine();
-    
-    Order newOrder = clientOrder.CreateOrder
-    (
-        ID,
-        Description,
-        Price,
-        Date,
-        Delivery,
-        Adress,
-        orderStateInput
-    );
-    
-    OrderState orderStateInput = (OrderState)int.Parse(orderStateInput);
-
-}

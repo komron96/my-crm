@@ -1,3 +1,6 @@
+using System.Data;
+using Npgsql;
+
 namespace Crm.DataAccess;
 
 public sealed class OrderRepository : IOrderRepository
@@ -11,26 +14,46 @@ public sealed class OrderRepository : IOrderRepository
     }
 
 
-    public bool Create(Order order)
+public async Task<bool> CreateAsync(Order order, CancellationToken cancellationToken)
+{
+    string connectionString = "данные подключения";
+    try
     {
-        Order newOrder = new()
-        {
-            Id = _id++,
-            Description = orderinfo.Description,
-            Price = orderinfo.Price,
-            Date = orderinfo.Date,
-            Delivery = orderinfo.Delivery,
-            Address = orderinfo.Address,
-            OrderState = orderinfo.OrderState.ToOrderStateEnum(),
-        };
-        _orders.Add(newOrder);
-        return orderinfo with { Id = newOrder.Id };
+        using NpgsqlConnection con = new(connectionString);
+        await con.OpenAsync(cancellationToken);
+
+        string insertQuery = "INSERT INTO Orders (Description, Price, Date, Delivery, Address, OrderState) " +
+                             "VALUES (@Description, @Price, @Date, @Delivery, @Address, @OrderState) ";
+
+        using NpgsqlCommand cmd = new NpgsqlCommand(insertQuery, con);
+        cmd.Parameters.AddWithValue("@Description", order.Description);
+        cmd.Parameters.AddWithValue("@Price", order.Price);
+        cmd.Parameters.AddWithValue("@Date", order.Date);
+        cmd.Parameters.AddWithValue("@Delivery", order.Delivery);
+        cmd.Parameters.AddWithValue("@Address", order.Address);
+        cmd.Parameters.AddWithValue("@OrderState", order.OrderState);
+        long newOrderId = (long)await cmd.ExecuteScalarAsync(cancellationToken);
+        return newOrderId > 0;
     }
+    
+    catch (OperationCanceledException)
+    {
+        Console.WriteLine("Создание ордера отменён пользователем");
+        return false;
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Создание ордера зафейлилась, проверьте код {ex}");
+        return false;
+    }
+}
+
+
 
     public bool GetOrder(long orderId)
     {
         Order order = _orders.Find(item => item.Id == orderId);
-        return order.ToOrderInfo();
+        return true;
     }
 
     public bool DeleteOrder(long orderId)

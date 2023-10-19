@@ -1,4 +1,4 @@
-namespace Crm.BusinessLogic;
+namespace Crm.DataAccess;
 public readonly record struct ClientInfo(
     long Id,
     string FirstName,
