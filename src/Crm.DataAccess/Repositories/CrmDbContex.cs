@@ -1,3 +1,4 @@
+using System.Net.Security;
 using Microsoft.EntityFrameworkCore;
 
 namespace Crm.DataAccess;
@@ -13,5 +14,11 @@ public sealed class CrmDbContex : DbContext
 
         optionsBuilder.UseNpgsql(DataBaseHelper.connectionString);
         //соединяемся с БД, EF CORE сам поймёт что БД должен быть под Posgres, так как используется UserNpg
+    }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.ApplyConfiguration(new ClientConfiguration());
+        modelBuilder.ApplyConfiguration(new OrderConfiguration());
     }
 }
