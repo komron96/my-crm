@@ -1,17 +1,20 @@
+
+using System.Data;
 using Npgsql;
 
 namespace Crm.DataAccess;
 
-public sealed class OrderRepository : IOrderRepository
+public sealed class PosgresqlOrderRepository : IOrderRepository
 {
-    private readonly List<Order> _orders;
-    private long _id = 0;
-
-    public OrderRepository()
+    private readonly NpgsqlConnection _npgsqlConnection;
+    PosgresqlOrderRepository(NpgsqlConnection npgsqlConnection)
     {
-        _orders = new List<Order>();
+        _npgsqlConnection = npgsqlConnection;
     }
-
+    PosgresqlOrderRepository()
+    {
+        _npgsqlConnection = new(SqlHelper.connectionString);
+    }
 
     public async Task<bool> CreateOrderAsync(Order order, CancellationToken cancellationToken)
     {
@@ -47,34 +50,28 @@ public sealed class OrderRepository : IOrderRepository
         }
     }
 
-
-
-    public bool GetOrder(long orderId)
+    bool IOrderRepository.DeleteOrder(long orderId)
     {
-        Order order = _orders.Find(item => item.Id == orderId);
-        return true;
+        throw new NotImplementedException();
     }
 
-    public bool DeleteOrder(long orderId)
+    bool IOrderRepository.GetOrder(long OrderId)
     {
-        int clientIndex = _orders.FindIndex(item => item.Id == orderId);
-        if (clientIndex < 0)
-            return false;
-        _orders.RemoveAt(clientIndex);
-        return true;
+        throw new NotImplementedException();
     }
 
-    public bool UpdateOrderState(long orderId, OrderState newOrderState)
+    int IOrderRepository.OrderCount()
     {
-        Order? order = _orders.Find(item => item.Id == orderId);
-        if (order is null) return false;
-        order.OrderState = newOrderState;
-        return true;
+        throw new NotImplementedException();
     }
 
+    int IOrderRepository.OrderStateCount(OrderState orderState)
+    {
+        throw new NotImplementedException();
+    }
 
-    //Counts
-    public int OrderCount() => _orders.Count;
-
-    public int OrderStateCount(OrderState orderState) => _orders.Count(item => item.OrderState == orderState);
+    bool IOrderRepository.UpdateOrderState(long orderId, OrderState orderstate)
+    {
+        throw new NotImplementedException();
+    }
 }
