@@ -12,3 +12,9 @@ public enum OrderState
     Approved,
     Cancelled
 }
+public enum DeliveryType
+{
+    Free,
+    Express,
+    Standart
+}

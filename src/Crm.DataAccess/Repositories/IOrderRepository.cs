@@ -1,15 +1,12 @@
 namespace Crm.DataAccess;
 public interface IOrderRepository
 {
-    //Main methods of Order
-    Task<bool> CreateOrderAsync(Order order, CancellationToken cancellationToken);
-    bool GetOrder(long OrderId);
-    bool DeleteOrder(long orderId);
-    bool UpdateOrderState(long orderId, OrderState orderstate);
+    ValueTask<bool> CreateOrderAsync(Order order, CancellationToken cancellationToken = default);
+    ValueTask<bool> GetOrderAsync(long OrderId, CancellationToken cancellationToken = default);
+    ValueTask<bool> DeleteOrderAsync(long orderId, CancellationToken cancellationToken = default);
+    ValueTask<bool> UpdateOrderStateAsync(long orderId, OrderState orderstate, CancellationToken cancellationToken = default);
 
-
-    //Stat service
-    int OrderCount();
-    int OrderStateCount(OrderState orderState);
+    ValueTask<int> GetOrderCountAsync(CancellationToken cancellationToken = default);
+    ValueTask<int> GetOrderStateCountAsync(OrderState orderState, CancellationToken cancellationToken = default);
 }
 
