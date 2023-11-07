@@ -1486,19 +1486,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Ком\\.nuget\\packages\\": {}
+    "C:\\Users\\komron.saidaliev\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ком\\Desktop\\my crm\\src\\Crm.DataAccess\\Crm.DataAccess.csproj",
+      "projectUniqueName": "C:\\Users\\komron.saidaliev\\Desktop\\my-crm\\src\\crm.dataaccess\\Crm.DataAccess.csproj",
       "projectName": "Crm.DataAccess",
-      "projectPath": "C:\\Users\\Ком\\Desktop\\my crm\\src\\Crm.DataAccess\\Crm.DataAccess.csproj",
-      "packagesPath": "C:\\Users\\Ком\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ком\\Desktop\\my crm\\src\\Crm.DataAccess\\obj\\",
+      "projectPath": "C:\\Users\\komron.saidaliev\\Desktop\\my-crm\\src\\crm.dataaccess\\Crm.DataAccess.csproj",
+      "packagesPath": "C:\\Users\\komron.saidaliev\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\komron.saidaliev\\Desktop\\my-crm\\src\\crm.dataaccess\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Ком\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\komron.saidaliev\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

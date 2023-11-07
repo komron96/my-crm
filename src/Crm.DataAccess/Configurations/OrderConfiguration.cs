@@ -15,5 +15,7 @@ public sealed class OrderConfiguration : IEntityTypeConfiguration<Order>
         modelBuilder.Property(p => p.Date).HasColumnType("VARCHAR(20)").HasColumnName("created_at");
         modelBuilder.Property(p => p.Delivery).HasColumnType("VARCHAR(20)").HasColumnName("delivery");
         modelBuilder.Property(p => p.Address).HasColumnType("VARCHAR(20)").HasColumnName("address").IsRequired();
+        modelBuilder.HasOne(c => c.Client).WithMany(c => c.Orders);
+        modelBuilder.HasOne(d => d.Delivery).WithOne(d => d.Order).HasForeignKey<Delivery>(d=> d.OrderId);
     }
 }

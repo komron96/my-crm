@@ -6,7 +6,7 @@ public interface IOrderRepository
     ValueTask<bool> DeleteOrderAsync(long orderId, CancellationToken cancellationToken = default);
     ValueTask<bool> UpdateOrderStateAsync(long orderId, OrderState orderstate, CancellationToken cancellationToken = default);
 
-    ValueTask<int> GetOrderAsync(CancellationToken cancellationToken = default);
+    ValueTask<int> GetOrderCountAsync(CancellationToken cancellationToken = default);
     ValueTask<int> GetOrderStateCountAsync(OrderState orderState, CancellationToken cancellationToken = default);
 }
 

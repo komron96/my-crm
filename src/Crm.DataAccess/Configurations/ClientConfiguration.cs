@@ -18,5 +18,6 @@ public sealed class ClientConfiguration : IEntityTypeConfiguration<Client>
         modelBuilder.Property(p => p.PassportNumber).HasColumnType("VARCHAR(20)").HasColumnName("passport_number");
         modelBuilder.Property(p => p.Age).HasColumnType("smallint").HasColumnName("age").IsRequired();
         modelBuilder.Property(p => p.Gender).HasColumnType("smallint").HasColumnName("gender").IsRequired();
+        modelBuilder.HasMany(o => o.Orders).WithOne(o => o.Client);
     }
 }

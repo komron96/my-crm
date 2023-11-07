@@ -7,6 +7,7 @@ public sealed class CrmDbContex : DbContext
 {
     public DbSet<Order> Orders { get; set; }  //Указываем какие таблицы у нас должны быть
     public DbSet<Client> Clients { get; set; }
+    public DbSet<Delivery> Deliveries { get; set; }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         if (optionsBuilder.IsConfigured)   //если сервер уже настроен то просто ретёрним.
@@ -20,5 +21,6 @@ public sealed class CrmDbContex : DbContext
     {
         modelBuilder.ApplyConfiguration(new ClientConfiguration());
         modelBuilder.ApplyConfiguration(new OrderConfiguration());
+        modelBuilder.ApplyConfiguration(new DeliveryConfiguration());
     }
 }
