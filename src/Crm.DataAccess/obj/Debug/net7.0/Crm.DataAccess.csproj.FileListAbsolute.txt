@@ -22,3 +22,5 @@ C:\Users\Ком\Desktop\my crm\src\Crm.DataAccess\obj\Debug\net7.0\Crm.DataAcces
 C:\Users\Ком\Desktop\my crm\src\Crm.DataAccess\obj\Debug\net7.0\refint\Crm.DataAccess.dll
 C:\Users\Ком\Desktop\my crm\src\Crm.DataAccess\obj\Debug\net7.0\Crm.DataAccess.pdb
 C:\Users\Ком\Desktop\my crm\src\Crm.DataAccess\obj\Debug\net7.0\ref\Crm.DataAccess.dll
+C:\Users\Ком\Desktop\my crm\src\Crm.DataAccess\bin\Debug\net7.0\Crm.DataAccess.runtimeconfig.json
+C:\Users\Ком\Desktop\my crm\src\Crm.DataAccess\obj\Debug\net7.0\Crm.DataAccess.genruntimeconfig.cache
