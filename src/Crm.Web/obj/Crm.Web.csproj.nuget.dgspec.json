@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ком\\Desktop\\my crm\\src\\Crm\\Crm.csproj": {}
+    "C:\\Users\\Ком\\Desktop\\my crm\\src\\Crm.Web\\Crm.Web.csproj": {}
   },
   "projects": {
     "C:\\Users\\Ком\\Desktop\\my crm\\src\\Crm.BusinessLogic\\Crm.BusinessLogic.csproj": {
@@ -138,14 +138,14 @@
         }
       }
     },
-    "C:\\Users\\Ком\\Desktop\\my crm\\src\\Crm\\Crm.csproj": {
+    "C:\\Users\\Ком\\Desktop\\my crm\\src\\Crm.Web\\Crm.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ком\\Desktop\\my crm\\src\\Crm\\Crm.csproj",
-        "projectName": "Crm",
-        "projectPath": "C:\\Users\\Ком\\Desktop\\my crm\\src\\Crm\\Crm.csproj",
+        "projectUniqueName": "C:\\Users\\Ком\\Desktop\\my crm\\src\\Crm.Web\\Crm.Web.csproj",
+        "projectName": "Crm.Web",
+        "projectPath": "C:\\Users\\Ком\\Desktop\\my crm\\src\\Crm.Web\\Crm.Web.csproj",
         "packagesPath": "C:\\Users\\Ком\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ком\\Desktop\\my crm\\src\\Crm\\obj\\",
+        "outputPath": "C:\\Users\\Ком\\Desktop\\my crm\\src\\Crm.Web\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Ком\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -156,6 +156,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -178,9 +179,13 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
-            "Npgsql": {
+            "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
-              "version": "[7.0.6, )"
+              "version": "[7.0.7, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.5.0, )"
             }
           },
           "imports": [
@@ -195,6 +200,9 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

@@ -1,9 +1,8 @@
 using Crm.DataAccess;
 namespace Crm.BusinessLogic;
 public sealed class OrderService : IOrderService
-{  
+{
     public readonly IOrderRepository _orderRepository;
-    //Question - почему мы обращаемся к репозиторию
     public OrderService(IOrderRepository orderRepository)
     {
         _orderRepository = orderRepository;
@@ -11,24 +10,24 @@ public sealed class OrderService : IOrderService
 
 
 
-    public Task<bool> CreateAsync(Order order, CancellationToken cancellationToken)
+    public ValueTask<bool> CreateAsync(Order order, CancellationToken cancellationToken)
     {
-        return _orderRepository.CreateAsync(order, cancellationToken);
+        return _orderRepository.CreateOrderAsync(order, cancellationToken);
     }
 
-    public bool GetOrder(long orderId)
+    public ValueTask<bool> GetOrder(long orderId)
     {
-        return _orderRepository.GetOrder(orderId);
+        return _orderRepository.GetOrderAsync(orderId);
     }
 
 
-    public bool DeleteOrder(long orderId)
+    public ValueTask<bool> DeleteOrderAsync(long orderId)
     {
-        return _orderRepository.DeleteOrder(orderId);
+        return _orderRepository.DeleteOrderAsync(orderId);
     }
 
-    public bool UpdateOrderState(long orderId, OrderState newOrderState)
+    public ValueTask<bool> UpdateOrderStateAsync(long orderId, OrderState newOrderState)
     {
-        return _orderRepository.UpdateOrderState(orderId, newOrderState);
+        return _orderRepository.UpdateOrderStateAsync(orderId, newOrderState);
     }
 }
