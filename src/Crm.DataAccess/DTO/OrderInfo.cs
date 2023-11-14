@@ -1,9 +1,10 @@
 namespace Crm.DataAccess;
 public readonly record struct OrderInfo(
     long Id,
-    string OrderState,
     short Price,
+    string OrderState,
     string Description,
     string Date,
-    string Delivery,
-    string Address);
+    string Address,
+    long DeliveryId
+    );

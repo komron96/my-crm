@@ -17,7 +17,7 @@ public static class IntegerExtensions
                 return false;
         }
     }
-        public static bool TryParseorderState(this int stateIndex, out OrderState orderState)
+    public static bool TryParseorderState(this int stateIndex, out OrderState orderState)
     {
         switch(stateIndex)
         {

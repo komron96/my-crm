@@ -8,7 +8,7 @@ public sealed class Order
     public string? Description { get; set; }
     public string? Date { get; set; }
     public string Address { get; set; }
-    public Client Client { get; set; }
     public long DeliveryId { get; set; }
+    public Client Client { get; set; }
     public Delivery Delivery { get; set; }
 }

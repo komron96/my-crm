@@ -12,8 +12,8 @@ public interface IClientService
 
 public interface IOrderService
 {
-    Task<bool> CreateAsync(Order order, CancellationToken cancellationToken);
-    bool GetOrder(long orderId);
-    bool DeleteOrder(long orderId);
-    bool UpdateOrderState(long orderId, OrderState newOrderState);
+    ValueTask<bool> CreateAsync(Order order, CancellationToken cancellationToken);
+    ValueTask<bool> GetOrderAsync(long orderId, CancellationToken cancellationToken);
+    ValueTask<bool> DeleteOrderAsync(long orderId, CancellationToken cancellationToken);
+    ValueTask<bool> UpdateOrderStateAsync(long orderId, OrderState newOrderState);
 }

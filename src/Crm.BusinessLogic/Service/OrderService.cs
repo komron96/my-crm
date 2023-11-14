@@ -3,32 +3,30 @@ namespace Crm.BusinessLogic;
 public sealed class OrderService : IOrderService
 {  
     public readonly IOrderRepository _orderRepository;
-    //Question - почему мы обращаемся к репозиторию
     public OrderService(IOrderRepository orderRepository)
     {
         _orderRepository = orderRepository;
     }
 
-
-
-    public Task<bool> CreateAsync(Order order, CancellationToken cancellationToken)
+    public ValueTask<bool> CreateAsync(Order order, CancellationToken cancellationToken)
     {
-        return _orderRepository.CreateAsync(order, cancellationToken);
+
+        return _orderRepository.CreateOrderAsync(order.ToOrderInfo(), cancellationToken);
     }
 
-    public bool GetOrder(long orderId)
+    public ValueTask<bool> GetOrderAsync(long orderId, CancellationToken cancellationToken)
     {
-        return _orderRepository.GetOrder(orderId);
+        return _orderRepository.GetOrderAsync(orderId, cancellationToken);
     }
 
 
-    public bool DeleteOrder(long orderId)
+    public ValueTask<bool> DeleteOrderAsync(long orderId, CancellationToken cancellationToken)
     {
-        return _orderRepository.DeleteOrder(orderId);
+        return _orderRepository.DeleteOrderAsync(orderId,cancellationToken);
     }
 
-    public bool UpdateOrderState(long orderId, OrderState newOrderState)
+    public ValueTask<bool> UpdateOrderStateAsync(long orderId, OrderState newOrderState)
     {
-        return _orderRepository.UpdateOrderState(orderId, newOrderState);
+        return _orderRepository.UpdateOrderStateAsync(orderId, newOrderState);
     }
 }

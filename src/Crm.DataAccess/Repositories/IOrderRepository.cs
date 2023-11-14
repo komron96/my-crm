@@ -8,5 +8,6 @@ public interface IOrderRepository
 
     ValueTask<int> GetOrderCountAsync(CancellationToken cancellationToken = default);
     ValueTask<int> GetOrderStateCountAsync(OrderState orderState, CancellationToken cancellationToken = default);
+    ValueTask<bool> CreateOrderAsync(OrderInfo orderInfo, CancellationToken cancellationToken);
 }
 
